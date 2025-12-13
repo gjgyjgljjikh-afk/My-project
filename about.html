@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Hotel | About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f7f2;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            color: #d4af37;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #b8860b;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: #d4af37;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Hotel Intro */
+        .hotel-intro {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .hotel-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .luxury-definition {
+            background-color: #f5f0e6;
+            padding: 60px 40px;
+            border-left: 5px solid #d4af37;
+            margin: 40px 0;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            color: #7a6a3a;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background-color: #fffef9;
+        }
+        
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #e6d6a8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: #b8860b;
+            overflow: hidden;
+            border: 3px solid #f5e8c6;
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .member-role {
+            color: #b8860b;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Values Section */
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ddd;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hotel-intro {
+                padding: 30px 20px;
+            }
+            
+            .hotel-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .luxury-definition {
+                padding: 30px 20px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                min-height: 50vh;
+                padding: 30px 0;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .team-member {
+                width: 150px;
+            }
+            
+            .member-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="logo">GOLDEN HOTEL</h1>
+            <p class="tagline">Redefining Luxury Since 1998</p>
+            <h2 style="font-size: 2.2rem; font-weight: 300; margin-bottom: 20px;">About Us</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">Discover the story behind the world's most luxurious hospitality experience and meet the passionate team that makes it all possible.</p>
+        </div>
+    </header>
+    
+    <!-- Hotel Introduction Section -->
+    <section class="container">
+        <h2 class="section-title">Our Philosophy</h2>
+        <div class="hotel-intro">
+            <p>When you think about Golden Hotel, we hope unparalleled luxury comes to mind. But what is luxury, really? Our answer may surprise you.</p>
+            
+            <div class="luxury-definition">
+                "True luxury is not about opulence, but about creating meaningful experiences that linger in memory long after the stay has ended."
+            </div>
+            
+            <p>At Golden Hotel, we believe luxury is found in the perfect balance of elegance and comfort, exceptional service and privacy, tradition and innovation. We craft experiences that go beyond the expected, creating moments that become cherished memories.</p>
+        </div>
+    </section>
+    
+    <!-- Our Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: #555;">Our dedicated team of hospitality professionals brings passion, expertise, and attention to detail to ensure your experience at Golden Hotel is nothing short of extraordinary.</p>
+            
+            <div class="team-container">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Marwan Waleed</h3>
+                    <p class="member-role">General Manager</p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Parthenia Mina</h3>
+                    <p class="member-role">Director of Operations</p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Hager Ahmed</h3>
+                    <p class="member-role">Head of Guest Relations</p>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Rafael Tawfek</h3>
+                    <p class="member-role">Executive Chef</p>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Youssef Ebrahim</h3>
+                    <p class="member-role">Head of Security</p>
+                </div>
+                
+                <!-- Team Member 6 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Nada Ali</h3>
+                    <p class="member-role">Spa Director</p>
+                </div>
+                
+                <!-- Team Member 7 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Jana Eslam</h3>
+                    <p class="member-role">Events Manager</p>
+                </div>
+                
+                <!-- Team Member 8 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Mohamed Ramdan</h3>
+                    <p class="member-role">Head Concierge</p>
+                </div>
+                
+                <!-- Team Member 9 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Sara Samer</h3>
+                    <p class="member-role">Marketing Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Values Section -->
+    <section class="container">
+        <h2 class="section-title">Our Values</h2>
+        <div class="values-container">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="value-title">Personalized Care</h3>
+                <p>We anticipate your needs and preferences to deliver service that feels uniquely tailored to you.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="value-title">Excellence</h3>
+                <p>We pursue perfection in every detail, from our amenities to our guest interactions.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="value-title">Integrity</h3>
+                <p>We build trust through transparency, honesty, and ethical practices in all we do.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Golden Hotel</h3>
+                    <p>Where luxury meets comfort, and every stay becomes a cherished memory.</p>
+                    <p>Redefining hospitality excellence since 1998.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Golden City</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@goldenhotel.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected with Golden Hotel</p>
+                    <div style="margin-top: 15px;">
+                        <i class="fab fa-facebook-f" style="margin-right: 15px; font-size: 1.2rem;"></i>
+                        <i class="fab fa-instagram" style="margin-right: 15px; font-size: 1.2rem;"></i>
+                        <i class="fab fa-twitter" style="margin-right: 15px; font-size: 1.2rem;"></i>
+                        <i class="fab fa-linkedin-in" style="font-size: 1.2rem;"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Golden Hotel. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #d4af37;"></i> for exceptional hospitality</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple animation for team members on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            teamMembers.forEach(member => {
+                member.style.opacity = '0';
+                member.style.transform = 'translateY(20px)';
+                member.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(member);
+            });
+        });
+    </script>
+</body>
+</html>
